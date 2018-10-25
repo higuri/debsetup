@@ -5,25 +5,39 @@ username=higuri
 # apt
 sudo apt update
 sudo apt -y upgrade
+
 # LANG
 sudo apt -y install language-pack-ja
 sudo apt -y install fonts-mplus
 sudo update-locale LANG=ja_JP.UTF-8
+
+# zsh
+sudo apt -y install zsh
+sudo chsh -s $(which zsh) ${username}
+
+# git
+sudo apt -y install git
+git config user.name "higuri"
+git config user.email "higuri36@gmail.com"
+
+# vim, tmux, python3
+sudo apt -y install vim-nox
+sudo apt -y install tmux
+sudo apt -y install python3
+
 # gnome-terminal
-# for WSL:
-#  1. (win) install VcXsrv
-#  2. (win) run "C:\Program Files\VcXsrv\vcxsrv.exe" :0 -ac -terminate -lesspointer -multiwindow -clipboard -wgl -dpi auto
-#  3. (deb) DISPLAY=localhost:0 gnome-terminal -e uim-fep
-# - 
 # TODO: gnome-terminal profile
-#       - color scheme, pallete (solarized)
-#       - font (M plus)
-#       - full screen, no menubar
-# pushd gnome
-# python gnome/set_customshortcut.py
-# popd
+#  - color scheme, pallete (solarized)
+#  - font (M plus)
 sudo apt -y install gnome-terminal dbus-x11
 dbus-uuidgen | sudo tee /etc/machine-id
+# TODO: uim-fep -e tmux
+cat << EOF > ~/.zprofile
+if [ -z "$TMUX" ]; then
+    DISPLAY=localhost:0.0 gnome-terminal --hide-menubar -- tmux
+fi
+EOF
+
 # uim
 sudo apt -y install uim-fep uim-anthy
 cat << EOF > ~/.uim
@@ -31,15 +45,8 @@ cat << EOF > ~/.uim
 (define-key generic-on-key? '("<Control> "))
 (define-key generic-off-key? '("<Control> "))
 EOF
-# zsh
-sudo apt -y install zsh
-sudo chsh -s $(which zsh) ${username}
-# git, vim, tmux, python3
-sudo apt -y install git
-sudo apt -y install vim-nox
-sudo apt -y install tmux
-sudo apt -y install python3
-# cleanup
+
+# apt cleanup
 sudo apt -y autoremove
 
 # setup dotfiles
@@ -47,5 +54,5 @@ pushd ~
 git clone https://github.com/higuri/dotfiles
 pushd dotfiles
 . install.sh
-popd
-popd
+popd # dotfiles
+popd # ~
