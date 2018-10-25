@@ -1,24 +1,4 @@
 #!/bin/bash
-#
-# How to Execute:
-# $ su root
-# # apt update
-# # apt -y install sudo
-# # add user ${username} sudo
-# # apt install git
-# # exit
-# $ git clone https://github.com/higuri/debsetup
-# $ pushd debsetup
-# $ . .install.sh
-# $ popd
-# $ rm -r debsetup
-#
-# initialize passwd for su (Ubuntu)
-# $ sudo su -
-# # passwd
-# # ...
-# # exit
-#
 
 username=higuri
 
@@ -27,7 +7,7 @@ sudo apt update
 sudo apt -y upgrade
 # LANG
 sudo apt -y install language-pack-ja
-sudo apt -y install fonts-ipafont
+sudo apt -y install fonts-mplus
 sudo update-locale LANG=ja_JP.UTF-8
 # gnome-terminal
 # for WSL:
@@ -54,10 +34,12 @@ EOF
 # zsh
 sudo apt -y install zsh
 sudo chsh -s $(which zsh) ${username}
-# vim, tmux, python3
+# git, vim, tmux, python3
+sudo apt -y install git
 sudo apt -y install vim-nox
 sudo apt -y install tmux
 sudo apt -y install python3
+# cleanup
 sudo apt -y autoremove
 
 # setup dotfiles
