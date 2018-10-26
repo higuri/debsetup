@@ -17,8 +17,8 @@ sudo chsh -s $(which zsh) ${username}
 
 # git
 sudo apt -y install git
-git config user.name "higuri"
-git config user.email "higuri36@gmail.com"
+git config --global user.name "Yusuke Higuchi"
+git config --global user.email "higuri36@gmail.com"
 
 # vim, tmux, python3
 sudo apt -y install vim-nox
@@ -33,7 +33,7 @@ sudo apt -y install gnome-terminal dbus-x11
 dbus-uuidgen | sudo tee /etc/machine-id
 # TODO: uim-fep -e tmux
 cat << EOF > ~/.zprofile
-if [ -z "$TMUX" ]; then
+if [ -z "\$TMUX" ]; then
     DISPLAY=localhost:0.0 gnome-terminal --hide-menubar -- tmux
 fi
 EOF
