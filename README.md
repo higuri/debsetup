@@ -11,9 +11,8 @@ $ su root
 ```
 
 ## Usage
-```shell
-$ mkdir debsetup
-$ wget -O - https://github.com/higuri/debsetup/tarball/master | tar xz -C debsetup --strip-components=1
+```shell 
+$ mkdir debsetup && wget -O - https://github.com/higuri/debsetup/tarball/master | tar xz -C debsetup --strip-components=1
 $ pushd debsetup
 $ ./setup.sh
 $ popd
