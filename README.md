@@ -12,11 +12,9 @@ $ su root
 
 ## Usage
 ```shell 
-$ mkdir debsetup && wget -O - https://github.com/higuri/debsetup/tarball/master | tar xz -C debsetup --strip-components=1
-$ pushd debsetup
-$ ./setup.sh
-$ popd
-$ rm -rf debsetup
+$ wget -O debsetup.sh https://raw.githubusercontent.com/higuri/debsetup/master/setup.sh
+$ ./debsetup.sh
+$ rm debsetup.sh
 ```
 And reboot.
 
