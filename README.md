@@ -14,6 +14,7 @@ $ su root
 ```shell
 $ cd ~
 $ wget -O debsetup.sh https://raw.githubusercontent.com/higuri/debsetup/master/setup.sh
+$ chmod +x debsetup.sh
 $ ./debsetup.sh
 $ rm debsetup.sh
 ```
