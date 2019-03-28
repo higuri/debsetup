@@ -46,6 +46,9 @@ cat << EOF > ~/.uim
 (define-key generic-off-key? '("<Control> "))
 EOF
 
+# build-essential: mainly for VirtualBox Guest Additions
+sudo apt -y install build-essential module-assistant
+
 # apt cleanup
 sudo apt -y autoremove
 
