@@ -6,7 +6,7 @@ My setup scripts for Debian and Ubuntu (including Ubuntu on WSL).
 ```shell
 $ su root
 # apt -y install sudo
-# add user ${username} sudo
+# usermod -aG sudo ${username}
 # exit
 ```
 
