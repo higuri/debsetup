@@ -27,8 +27,8 @@ sudo apt -y install python3
 
 # gnome-terminal
 # TODO: gnome-terminal profile
-#  - color scheme: Solarized Dark
 #  - font: M+ 1mn regular
+#  - color: text/background=Solarized Dark, palette=Solarized
 sudo apt -y install gnome-terminal dbus-x11
 dbus-uuidgen | sudo tee /etc/machine-id
 # TODO: uim-fep -e tmux
