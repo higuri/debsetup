@@ -49,6 +49,7 @@ git config --global user.name "Yusuke Higuchi"
 git config --global user.email "higuri36@gmail.com"
 
 # build-essential: mainly for VirtualBox Guest Additions
+# TODO: test `sudo apt-get install virtualbox-guest-dkms`
 sudo apt -y install build-essential module-assistant
 
 # apt cleanup
