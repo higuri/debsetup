@@ -25,7 +25,7 @@ sudo apt -y install python3
 # TODO: gnome tweak tools
 #  - add 'My GNOME Terminal' to startups
 sudo apt -y install gnome-terminal
-sudo cat << EOF > /usr/share/applications/my-gnome-terminal.desktop
+cat << EOF  /usr/share/applications/my-gnome-terminal.desktop
 [Desktop Entry]
 Type=Application
 Encoding=UTF-8
