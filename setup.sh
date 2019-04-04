@@ -47,7 +47,18 @@ sudo apt -y install git
 git config --global user.name "Yusuke Higuchi"
 git config --global user.email "higuri36@gmail.com"
 
-# build-essential: mainly for VirtualBox Guest Additions
+# configurations for VirtualBox Guest
+# - disable <Alt> <Super>
+cat << EOF > ~/.Xmodmap   
+clear mod1
+clear mod2
+clear mod4
+keycode 64 = NoSymbol
+keycode 133 = NoSymbol
+keycode 134 = NoSymbol
+EOF
+
+# - build-essential
 # TODO: test `sudo apt-get install virtualbox-guest-dkms`
 sudo apt -y install build-essential module-assistant
 
