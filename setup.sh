@@ -12,11 +12,10 @@ sudo update-locale LANG=ja_JP.UTF-8
 # zsh
 sudo apt -y install zsh
 sudo chsh -s $(which zsh) $USER
-
-# vim, tmux, python3
-sudo apt -y install vim-nox
+# tmux
 sudo apt -y install tmux
-sudo apt -y install python3
+# vim (use vim-gnome just for +clipboard)
+sudo apt -y install vim-gnome
 
 # gnome-terminal
 # TODO: gnome-terminal profile
