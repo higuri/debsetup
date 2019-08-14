@@ -4,6 +4,12 @@
 #   - font: M+ 1mn regular
 #   - color: text/background=Solarized Dark, palette=Solarized
 #   - add 'Custom GNOME Terminal' to startups
+# - gnome-session-properties (set startup)
+#   - add 'gnome-terminal --hide-menubar --full-screen
+# - virtualbox preference
+#   - input: uncheck 'Auto Capture Keyboard '
+#   - hide menubar
+#   - hide statusbar
 
 # apt
 sudo apt update
@@ -32,8 +38,6 @@ EOF
 
 # git
 sudo apt -y install git
-git config --global user.name "Yusuke Higuchi"
-git config --global user.email "higuri36@gmail.com"
 
 # build-essential (mainly for virtualbox guestadditions)
 sudo apt -y install build-essential dkms linux-headers-$(uname -r)
@@ -48,3 +52,4 @@ pushd dotfiles
 . install.sh
 popd # dotfiles
 popd # ~
+foo
